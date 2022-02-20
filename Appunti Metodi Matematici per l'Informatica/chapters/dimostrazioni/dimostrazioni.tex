@@ -1,0 +1,74 @@
+\section{Dimostrazione diretta}
+$p \implies q$
+\begin{example}
+\emph{Se \textit{n} è dispari allora $n^2$ è dispari.} \\
+\textbf{Dimostrazione}: Sia \textit{n} un intero dispari. \\
+$n^2=(2k+1)^2=4k^2+1+4k=2(2k^2+2k)+1$ \\
+Quindi $n^2$ è dispari.
+\end{example}
+
+\section{Dimostrazione per contrapposizione}
+\label{sec:dimostrazione_contrapposizione}
+
+$\neg q \implies \neg p$ \\
+Dalla \autoref{tab:true_table_contronominale} si ha che $\neg q \implies \neg p \equiv p \implies q$
+\begin{example}
+Se $3n+2$ è dispari allora \textit{n} è dispari. \\
+\textbf{Contronominale}: Se \textit{n} è pari allora $3n+2$ è pari. \\
+\textbf{Dimostrazione}: Sia n pari. \\
+$3n+2=3(2k)+2=2(3k)+2=2(3k+1)$ \\
+$2(3k+1)$ è sempre un numero pari in quanto $2 \cdot r, r \in \mathbb{R}$ è sempre pari. \\
+Avendo dimostrato che $\neg q \implies \neg p$ è \textbf{True} e poiché $\neg q \implies \neg p \equiv p \implies q$, si ha che \emph{$3n+2$ è dispari allora \textit{n} è dispari} è \textbf{True}.
+\end{example}
+
+\section{Dimostrazione per assurdo o contraddizione}
+$p \implies q$ è \textbf{T} quando $p \wedge \neg q$ è \textbf{F} \\
+Si ricorda che dalle \nameref{subs:de_morgan_laws} si ha che $\neg (p \implies q) \equiv p \wedge \neg q$
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_p_imp_q__p_and_not_q}Tabella di verità di $p \implies q$ e $p \wedge \neg q$.}
+    \begin{tabular}{|c | c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $\neg q$ & $p \implies q$ & $p \wedge \neg q$ \\
+     \hline\hline
+     T & T & F & T & F \\ 
+     \hline
+     T & F & T & F & T \\
+     \hline
+     F & T & F & T & F \\
+     \hline
+     F & F & T & T & F \\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{example}
+\emph{Se $3n+2$ è dispari allora \textit{n} è dispari}. \\
+\textbf{$p \wedge \neg q$}: $3n+2$ è dispari e \textit{n} è pari. \\
+\textbf{Dimostrazione}: \\
+$3n+2=3(2k)+2=2(3k+1)$ \\
+Nella \nameref{sec:dimostrazione_contrapposizione} abbiamo visto che $2(3k+1)$ è sempre pari. Poiché $3n+2=2(3k+1)$ allora $3n+2$ è pari, ma avevamo detto che era dispari. Quindi è un assurdo e \textbf{$p \wedge \neg q$} è \textbf{F}, quindi $p \implies q$ è \textbf{T}, cioè \emph{Se $3n+2$ è dispari allora \textit{n} è dispari} è \textbf{T}.
+\end{example}
+
+\section{Dimostrazione banale o vuota}
+$p \implies q$, \textit{p}=\textbf{F} allora dalla \autoref{tab:true_table_implies} $p \implies q$ è sempre \textbf{True}.
+
+\section{Dimostrazione di equivalenza}
+$p \iff q$ \\
+Si dimostra $(p \implies q) \wedge (q \implies p)$
+
+\section{Controesempio}
+$\forall x P(x)$ \\
+$\neg(\forall x P(x)) \equiv \exists x\neg P(x)$
+
+\section{Prova di esistenza}
+$\exists x P(x)$
+\begin{itemize}
+    \item Può essere costruttiva esibendo un elemento \textit{x} nel dominio per cui $P(x)$ è \textbf{True}.
+    \item Può essere non costruttiva.
+\end{itemize}
+
+\section{Dimostrazione per casi}
+$(p_1 \vee p_2 \vee ... \vee p_n) \implies q \equiv (p_1 \implies q) \vee (p_2 \implies q) \vee ... \vee (p_n \implies q)$
+
+\section{Dimostrazione esaustiva}
+<<TODO>>

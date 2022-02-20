@@ -1,0 +1,320 @@
+\section{Perché studiare la logica proposizionale}
+La materia insegna a distinguere quelle che sono delle proposizioni, ossia che hanno valore \textbf{True} \underline{\textit{oppure}} \textbf{False}, e quelle che invece non lo sono.
+
+La frase \emph{Che bella giornata} non è una proposizione, in quanto essa può essere sia True che False.
+
+Allo stesso modo affermazioni matematiche del tipo $x + 2 = 5$ non è una proposizione in quanto il valore della \textit{x} può variare e con esso varia il valore di verità della proposizione in True o False.
+
+Invece proposizioni del tipo \emph{La penna è sul tavolo} oppure $5 + 4 = 0$ sono proposizioni in quanto hanno un valore di verità univoco al momento della loro affermazione.
+
+\section{Proposizioni}
+\subsection{Semplici}
+Le proposizioni semplici sono dette tali quando hanno un valore \textbf{T} o \textbf{F} e non sono usati connettivi logici.
+\begin{example}
+\emph{La televisione è accesa}
+\end{example}
+\begin{example}
+$3 + 5 = 8$
+\end{example}
+
+\subsection{Composte}
+Le proposizioni composte sono dette tali quando hanno un valore \textbf{T} o \textbf{F} e sono usati connettivi logici.
+\begin{example}
+\emph{Laura fa i compiti \textbf{e} ascolta la musica}
+\end{example}
+\begin{example}
+\emph{Se domani piove \textbf{allora} prenderò l'ombrello}
+\end{example}
+
+\section{Connettivi logici}
+
+\subsection{NOT}
+Il connettivo logico $\neg$ ha valore \textbf{T} se e solo se la proposizione \textit{p} ha valore \textbf{F}, e ha valore \textbf{F} se e solo se la proposizione \textit{p} ha valore \textbf{T}.
+
+\begin{table}[H]
+    \centering
+    \caption{\label{tab:true_table_NOT}Tabella di verità del connettivo logico NOT.}
+    \begin{tabular}{|c || c ||} 
+     \hline
+     \textit{p} & $\neg p$ \\
+     \hline\hline
+     T & F \\ 
+     \hline
+     F & T \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{AND}
+Il connettivo logico \textbf{$\wedge$} ha valore \textbf{T} se e solo se entrambe le proposizioni \textit{p} e \textit{q} hanno valore \textbf{T}, se una delle due è \textbf{F} allora il valore della proposizione è \textbf{F}.
+
+\begin{table}[H]
+    \centering
+    \caption{\label{tab:true_table_AND}Tabella di verità del connettivo logico AND.}
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \wedge q$ \\
+     \hline\hline
+     T & T & T \\ 
+     \hline
+     T & F & F \\
+     \hline
+     F & T & F \\
+     \hline
+     F & F & F \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{OR}
+Il connettivo logico \textbf{$\vee$} ha valore \textbf{T} se e solo se una delle proposizioni \textit{p} o \textit{q} ha valore \textbf{T}, se sono entrambe \textbf{F} allora il valore della proposizione è \textbf{F}.
+
+\begin{table}[H]
+    \centering
+    \caption{\label{tab:true_table_OR}Tabella di verità del connettivo logico OR.}
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \vee q$ \\
+     \hline\hline
+     T & T & T \\ 
+     \hline
+     T & F & T \\
+     \hline
+     F & T & T \\
+     \hline
+     F & F & F \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{XOR}
+Il connettivo logico \textbf{$\oplus$} ha valore \textbf{T} se e solo se una delle le proposizioni \textit{p} o \textit{q} ha valore \textbf{T} ma non entrambe, se sono entrambe \textbf{F} o \textbf{T} allora il valore della proposizione è \textbf{F}.
+
+\begin{table}[H]
+    \centering
+    \caption{\label{tab:XOR}Tabella di verità del connettivo logico XOR.}
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \oplus q$ \\
+     \hline\hline
+     T & T & F \\ 
+     \hline
+     T & F & T \\
+     \hline
+     F & T & T \\
+     \hline
+     F & F & F \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Implicazione}
+Il connettivo logico \textbf{$\implies$} ha valore \textbf{F} se e solo se la proposizione \textit{p} ha valore \textbf{T} e la proposizione \textit{q} ha valore \textbf{F}, altrimenti il valore della proposizione è \textbf{T}.
+
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_implies}Tabella di verità del connettivo logico Implicazione.}
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \implies q$ \\
+     \hline\hline
+     T & T & T \\ 
+     \hline
+     T & F & F \\
+     \hline
+     F & T & T \\
+     \hline
+     F & F & T \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Equivalenza}
+Il connettivo logico \textbf{$\iff$} ha valore \textbf{T} se e solo se la proposizione \textit{p} e la proposizione \textit{q} hanno valori uguali, altrimenti il valore della proposizione è \textbf{F}.
+
+\begin{table}[H]
+    \centering
+    \caption{\label{tab:true_table_iff}Tabella di verità del connettivo logico Equivalenza.}
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \iff q$ \\
+     \hline\hline
+     T & T & T \\ 
+     \hline
+     T & F & F \\
+     \hline
+     F & T & F \\
+     \hline
+     F & F & T \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\section{Equivalenza logica}
+Due proposizioni composte \textit{p} e \textit{q} si dicono equivalenti logicamente se e solo se hanno la stessa tabella di verità e si indica con \textbf{p $\equiv$ q}.\\
+\textbf{N.B:} $\equiv$ non è un connettivo logico. \\
+\textbf{N.B:} $\equiv$ e $\iff$ sono diversi. \\
+\textbf{N.B:} Non si usa il simbolo $=$ per esprimere l'equivalenza logica, ma si usa il simbolo $\equiv$.
+
+\subsection{Tautologia}
+La tautologia è una proposizione composta sempre \textbf{True}, ossia tutte \textbf{T} nella colonna della proposizione composta, qualsiasi sia il valore delle proposizioni elementari che la compongono. \\
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_tautologia}Tabella di verità della tautologia $(p \wedge q) \implies (p \vee q)$.}
+    \begin{tabular}{|c | c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \wedge q$ & $p \vee q$ & $(p \wedge q) \implies (p \vee q)$ \\
+     \hline\hline
+     T & T & T & T & T \\ 
+     \hline
+     T & F & F & T & T \\
+     \hline
+     F & T & F & T & T \\
+     \hline
+     F & F & F & F & T \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Contraddizione}
+La contraddizione è una proposizione composta sempre \textbf{False}, ossia tutte \textbf{F} nella colonna della proposizione composta, qualsiasi sia il valore delle proposizioni elementari che la compongono.
+\begin{table}[H]
+    \caption{\label{tab:true_table_contraddizione}Tabella di verità della contraddizione $p \wedge \neg p$.}
+    \centering
+    \begin{tabular}{|c | c || c ||} 
+     \hline
+     \textit{p} & $\neg p$ & $p \wedge \neg p$ \\
+     \hline\hline
+     T & F & F \\ 
+     \hline
+     F & T & F \\
+     \hline
+    \end{tabular}
+\end{table}
+
+\section{Inverso, opposto e contronominale}
+\subsection{Inverso}
+Inverso di $p \implies q$ è $q \implies p$ \\
+$p \implies q \not\equiv q \implies p$
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_inverso}Tabella di verità di $p \implies q \not\equiv q \implies p$.}
+    \begin{tabular}{|c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $p \implies q$ & $q \implies p$ \\
+     \hline\hline
+     T & T & T & T\\ 
+     \hline
+     T & F & F & T\\
+     \hline
+     F & T & T  & F\\
+     \hline
+     F & F & T & T \\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{example}
+\emph{Se domani piove \textbf{allora} prenderò l'ombrello} \\
+Inverso: \emph{Prenderò l'ombrello \textbf{se} domani piove}
+\end{example}
+
+\subsection{Opposto}
+Opposto di $p \implies q$ è  $\neg p \implies \neg q$ \\
+$p \implies q \not\equiv \neg p \implies \neg q$
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_opposto}Tabella di verità di $p \implies q \not\equiv \neg p \implies \neg q$.}
+    \begin{tabular}{|c | c | c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $\neg p$ & $\neg q$ & $p \implies q$ & $\neg p \implies \neg q$ \\
+     \hline\hline
+     T & T & F & F & T & T\\ 
+     \hline
+     T & F & F & T & F & T\\
+     \hline
+     F & T & T & F & T & F\\
+     \hline
+     F & F & T & T & T & T\\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{example}
+\emph{Se domani piove \textbf{allora} prenderò l'ombrello} \\
+Opposto: \emph{Se domani non piove \textbf{allora} non prenderò l'ombrello}
+\end{example}
+
+\subsection{Contronominale}
+Contronominale di $p \implies q$ è  $\neg q \implies \neg p$ \\
+$p \implies q \equiv \neg p \implies \neg q$
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_contronominale}Tabella di verità di $p \implies q \equiv \neg p \implies \neg q$.}
+    \begin{tabular}{|c | c | c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $\neg p$ & $\neg q$ & $p \implies q$ & $\neg q \implies \neg p$ \\
+     \hline\hline
+     T & T & F & F & T & T\\ 
+     \hline
+     T & F & F & T & F & F\\
+     \hline
+     F & T & T & F & T & T\\
+     \hline
+     F & F & T & T & T & T\\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{example}
+\emph{Se domani piove \textbf{allora} prenderò l'ombrello} \\
+Contronominale: \emph{Non prenderò l'ombrello \textbf{se} domani non piove}
+\end{example}
+
+\subsection{Osservazione: l'inverso è equivalente logicamente all'opposto}
+Dalla \autoref{tab:true_table_inverso} e dalla \autoref{tab:true_table_opposto} si ha che $q \implies p \equiv \neg p \implies \neg q$
+\begin{table}[H]
+    \centering    
+    \caption{\label{tab:true_table_inverso_eqlogic_opposto}Tabella di verità di $q \implies p \equiv \neg p \implies \neg q$.}
+    \begin{tabular}{|c | c | c | c | c || c ||} 
+     \hline
+     \textit{p} & \textit{q} & $\neg p$ & $\neg q$ & $q \implies p$ & $\neg p \implies \neg q$ \\
+     \hline\hline
+     T & T & F & F & T & T\\ 
+     \hline
+     T & F & F & T & T & T\\
+     \hline
+     F & T & T & F & F & F\\
+     \hline
+     F & F & T & T & T & T\\
+     \hline
+    \end{tabular}
+\end{table}
+
+\section{Equivalenze logiche note}
+\subsection{Leggi di De Morgan}
+\label{subs:de_morgan_laws}
+\begin{itemize}
+    \item $\neg(p \wedge q) \equiv \neg p \vee \neg q$
+    \item $\neg(p \vee q) \equiv \neg p \wedge \neg q$
+    \item $p \implies q \equiv \neg p \vee q$
+    \item $\neg(p \implies q) \equiv \neg(\neg p \vee q) \equiv p \wedge \neg q$
+\end{itemize}
+
+\subsection{Equivalenze più usate}
+\begin{itemize}
+    \item $\neg(\neg p) \equiv p$
+    \item $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$
+    \item $p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)$
+    \item $(x < y < z) \equiv (x < y) \wedge (y < z)$
+    \item $p \iff q \equiv (p \implies q) \wedge (q \implies p) \equiv (\neg p \vee q) \wedge (\neg q \vee p)$
+\end{itemize}
+
+\subsection{Altre equivalenze}
+\begin{itemize}
+    \item $p \wedge T \equiv p$
+    \item $p \vee F \equiv p$
+    \item $p \vee T \equiv T$
+    \item $p \wedge F \equiv F$
+    \item $p \vee p \equiv p$
+    \item $p \wedge p \equiv p$
+    \item $p \vee \neg p \equiv T$
+    \item $p \wedge \neg p \equiv F$
+\end{itemize}

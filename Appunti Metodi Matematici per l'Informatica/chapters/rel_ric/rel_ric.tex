@@ -1,0 +1,95 @@
+\section{Metodo di iterazione}
+Una relazione di ricorrenza può essere risolta con il metodo di iterazione.
+\begin{itemize}
+    \item Per prima cosa calcolare il valore per alcune chiamate ricorsive a $T$ in $T(n)$, ossia calcolare $T(--)$ in $T(n) = ... T(--) ...$ per trovare un pattern nelle soluzioni.
+    \item Una volta individuato il pattern, sostituirlo con opportune variabili, ad esempio $i$ e porre le variabili in un intervallo in modo tale che la condizione iniziale di $n > k$ sia vera. Se non è presente chiaramente questa condizione, deve essere ricavata. Si ricava semplicemente ponendo $n > m$, dove $m$ è il "Passo base" della relazione di ricorrenza, ad esempio se è $T(1) = ...$, allora $n > 1$.
+    \item Porre $i$ al suo valore massimo nell'intervallo, in quanto di sta calcolando $T(n)$.
+    \item Fare i calcoli e ci si ritroverà con la risoluzione della relazione di ricorrenza. \\
+    \textbf{N.B.}: In generale durante i calcoli di $T(n) = ... T(--) ...$ deve scomparire qualsiasi richiamo a $T(--)$, l'unico modo per farlo scomparire è che $--$ sia uguale $m$, dove $m$ è il "Passo base" della relazione di ricorrenza, poiché ne conosciamo il valore di $T(m)$ si sostituisce il richiamo a $T(m)$ con il suo valore. Ad esempio $T(1) = 4$, allora $m=1$ e $-- = m = 1$ e si sostituisce la chiamata a $T(m)$ con $4$. Questo può aiutare con i calcoli e a vedere si sta facendo bene.
+\end{itemize}
+
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+$T(1) = 2$
+
+$T(n) = T(n - 1) + 3, n > 1$
+
+\centerline{\textbf{Svolgimento}}
+$T(n) = T(n - 1) + 3 =$ \\ \footnote{$T(n-1)=T((n-1)-1)+3=T(n-2)+3$}
+$=[T(n-2)+3]+3=T(n-2)+3 \cdot 2 =$ \\ \footnote{$T(n-2)=T((n-2)-1)+3=T(n-3)+3$}
+$=[T(n-3)+3]+2 \cdot 3=T(n-3)+3 \cdot 3$
+
+...
+
+$T(n) = T(n - i) + 3 \cdot i$, $1 \le i \le n - 1$ \\
+$i \le n - 1$ perché abbiamo bisogno che $n - i$ sia uguale a $1$ perché $T$ inizia da $1$. \\
+$T(n) = T(n -(n - 1) + 3(n - 1) =$ \\ 
+$T(n - n + 1) + 3n - 3 =$ \\
+$T(1) + 3n - 3 = 2 + 3n - 3 = 3n - 1$
+
+$T(n) = a_n = 3n - 1$
+
+La relazione di ricorrenza è stata risolta, si verifica con il Principio di induzione matematico se è vera.
+\end{example}
+
+\section{Principio di induzione matematico sulle relazioni di ricorrenze}
+\textbf{Passo base}: Provare che $a_m = T(m)$, dove $m$ rappresenta il più piccolo elemento del dominio.
+
+\textbf{Passo induttivo}: Provare che $T(n) = a_n$. Per \textbf{Ipotesi induttiva} in $T(n) = ... T(--)...$ si ha che $a_{--} = T(--)$. Sostituire $T(--)$ con $a_{--}$ nella definizione di $T(n)$, fare i calcoli e risulterà che $T(n) = a_n$.
+
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+Dall'esempio precedente dimostrare che $T(n) = T(n - 1) + 3 = a_n = 3n - 1$
+
+\centerline{\textbf{Svolgimento}}
+\textbf{Passo base}: $a_1 = 3 \cdot 1 - 1 = 3 - 1 = 2 = T(1)$
+
+\textbf{Passo induttivo}: \\
+\textbf{Ipotesi induttiva}: $a_{n-1} = T(n - 1) = 3(n - 1) - 1 = 3n - 3 - 1 = 3n - 4$ \\
+$T(n) = T(n - 1) + 3 = a_{n-1} + 3 = \\ 
+= [3n - 4] + 3 = 3n - 1$
+
+Il passo induttivo è stato dimostrato e pertanto l'enunciato è vero.
+
+\end{example}
+
+\section{Esempio più complesso}
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+$T(1) = 1$
+
+$T(n) = 2T(\frac{n}{2}) + n$, $n > 1$ e $n$ potenza di 2.
+
+\centerline{\textbf{Svolgimento}}
+$T(n) = 2T(\frac{n}{2}) + n =$ \\ \footnote{$T(\frac{n}{2}) = 2T((\frac{n}{2})/2) + \frac{n}{2} = 2T(\frac{n}{2^2}) + \frac{n}{2}$}
+$= 2[2T(\frac{n}{2^2}) + \frac{n}{2}] + n = 2^2T(\frac{n}{2^2}) + n + n = 2^2T(\frac{n}{2^2}) + 2n =$ \\ \footnote{$T(\frac{n}{2^2}) = 2T((\frac{n}{2^2})/2) + \frac{n}{2^2} = 2T(\frac{n}{2^3}) + \frac{n}{2^2}$}
+$= 2^2[2T(\frac{n}{2^3}) + \frac{n}{2^2}] + 2n = 2^3T(\frac{n}{2^3}) + n + 2n = 2^3T(\frac{n}{2^3}) + 3n$ \\
+... \\
+$T(n) = 2^i T(\frac{n}{2^i}) + i \cdot n$, $1 \le i \le \log_{2} n$ \\
+\textbf{N.B.}: $i \le \log_{2} n$ perché abbiamo bisogno che $\frac{n}{2^i}$ sia uguale a $1$ perché $T$ inizia da $1$ e quindi che $2^i$ sia uguale a $n$. Dalle proprietà matematiche si ha che $x^{\log_{x} n} = n$. \\
+$T(n) = 2^{\log_{2} n} T(\frac{n}{2^{\log_{2} n}}) + \log_{2} n \cdot n =$ \\
+$= nT(n/n) + n\log_{2} n = \\$
+$= n \cdot 1 + n\log_{2} n = n + n\log_{2} n$
+
+\centerline{\textbf{Dimostrazione}}
+
+\textbf{Passo base}: $a_1 = 1 + 1\log_{2} 1 = 1 + 0 = 1 = T(1)$
+
+\textbf{Passo induttivo}: \\
+\textbf{Ipotesi induttiva}: $n$ potenza di 2 e $a_{\frac{n}{2}} = T(\frac{n}{2}) = \frac{n}{2} + \frac{n}{2}\log_{2} \frac{n}{2}$ \\
+$T(n) = 2T(\frac{n}{2}) + n = 2a_{\frac{n}{2}} + n = \\
+= 2[\frac{n}{2} + \frac{n}{2}\log_{2} \frac{n}{2}] + n \\
+= n + n\log_{2} \frac{n}{2} + n = \\
+= n + n(\log_{2} n - \log_{2} 2) + n = \\
+= n + n\log_{2} n - n + n = \\
+= n + n\log_{2} n = a_n$
+
+Il passo induttivo è stato dimostrato e pertanto l'enunciato è vero.
+
+\end{example}

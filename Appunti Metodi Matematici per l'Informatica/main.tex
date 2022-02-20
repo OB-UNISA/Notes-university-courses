@@ -1,0 +1,116 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage[margin=3cm, bindingoffset=1cm]{geometry}
+\linespread{1.5}
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage[english, italian]{babel}
+\setlength{\parindent}{1cm}
+\setlength{\headheight}{15pt}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\newtheoremstyle{example}{}{}{}{}{\bfseries}{\smallskip}{\newline}{}
+\theoremstyle{example}
+\newtheorem{example}{Esempio}[subsection]
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,trees}
+\usetikzlibrary{graphs}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ \uppercase{#1}}{}}
+\fancyhf{}
+\fancyhead[C]{\textbf{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\usepackage[Conny]{fncychap}
+\usepackage[style=altlist, nonumberlist, numberedsection, acronym, toc]{glossaries}
+\selectlanguage{italian}
+
+\title{Appunti Metodi Matematici per l'Informatica}
+\author{Oleg Bilovus, \orcidlink{0000-0001-6285-5344}}
+\date{Gennaio 2022}
+
+\begin{document}
+\include{cover/cover}
+
+\frontmatter
+\chapter*{Abstract}
+\input{abstract}
+
+
+\tableofcontents
+\clearpage
+
+\mainmatter
+\part{Logica, insiemi e dimostrazioni}
+\label{par:first}
+
+\chapter{Logica proposizionale}
+\label{cha:logica_proposizionale}
+\input{chapters/logica_proposizionale/logica_proposizionale}
+
+\chapter{Logica predicativa}
+\label{cha:logica_predicativa}
+\input{chapters/logica_predicativa/logica_predicativa}
+
+\chapter{Insiemi}
+\label{cha:insiemi}
+\input{chapters/insiemi/insiemi}
+
+\chapter{Dimostrazioni}
+\label{cha:dimostrazioni}
+\input{chapters/dimostrazioni/dimostrazioni}
+
+
+\part{Ricorsione, principio induzione e relazioni di ricorrenze}
+\label{par:second}
+
+\chapter{Definizione funzioni ricorsivamente}
+\label{cha:def_ric_funz}
+\input{chapters/def_ric_funz/def_ric_funz}
+
+\chapter{Definizione insiemi ricorsivamente}
+\label{cha:def_ric_ins}
+\input{chapters/def_ric_ins/def_ric_ins}
+
+\chapter{Definizione stringhe ricorsivamente}
+\label{cha:def_ric_str}
+\input{chapters/def_ric_str/def_ric_str}
+
+\chapter{Definizione alberi radicati ricorsivamente}
+\label{cha:def_ric_albero_radicato}
+\input{chapters/def_ric_albero_radicato/def_ric_albero_radicato}
+
+\chapter{Definizione alberi binari ricorsivamente}
+\label{cha:def_ric_albero_binario}
+\input{chapters/def_ric_albero_binario/def_ric_albero_binario}
+
+\chapter{Principio di induzione}
+\label{cha:principio_induzione}
+\input{chapters/principio_induzione/principio_induzione}
+
+\chapter{Relazioni di ricorrenza}
+\label{cha:rel_ric}
+\input{chapters/rel_ric/rel_ric}
+
+
+\backmatter
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\clearpage
+
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\clearpage
+\end{document}

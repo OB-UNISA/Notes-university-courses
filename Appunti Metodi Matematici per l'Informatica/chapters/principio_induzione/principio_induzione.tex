@@ -1,0 +1,152 @@
+\section{Principio di induzione matematico}
+\textbf{Passo base}: Provare che il Passo base è vero, ossia $P(m)$ è vera, dove è $m$ è l'intero più piccolo del dominio.
+
+\textbf{Passo induttivo}: Supporre per \textbf{Ipotesi induttiva} che $P(k)$ è vera, provare che $P(k + 1)$ è vera. Per farlo, è essenziale usare l'ipotesi induttiva. \\
+$P(k) \implies P(k+1)$
+
+\textbf{N.B.}: Giustificare ogni uguaglianza non banale.
+
+\section{Principio di induzione forte}
+\textbf{Passo base}:  Provare che il Passo base è vero, ossia $P(m)$ è vera, dove è $m$ è l'intero più piccolo del dominio. Il Passo base può variare, possono essere anche più proposizioni vere nel passo base.
+
+\textbf{Passo induttivo}: Supporre per \textbf{Ipotesi induttiva}  che $P(m), ..., P(k)$ è vera, provare che $P(k + 1)$ è vera. Per farlo, è essenziale usare l'ipotesi induttiva. \\
+$(P(m) \wedge P(m+1) \wedge ... \wedge P(k)) \implies P(k+1)$
+
+\textbf{N.B.}: Giustificare ogni uguaglianza non banale.
+
+\section{Principio di induzione strutturale}
+\textbf{Passo base}: Provare che l'enunciato $P$ è vero per ogni elemento dell'insieme specificato nel \textbf{Passo base} della definizione ricorsiva dell'insieme.
+
+\textbf{Passo induttivo}: Supporre per \textbf{Ipotesi induttiva} che l'enunciato $P$ è vero per gli elementi nell'insieme, provare che l'enunciato è vero quando si costruiscono nuovi elementi dell'insieme usando il Passo ricorsivo dell'insieme e l'Ipotesi induttiva.
+
+\textbf{N.B.}: Giustificare ogni uguaglianza non banale.
+
+\section{Quale induzione usare}
+Per dimostrare che due definizioni sono uguali, si deve dimostrare che $def_1 \subseteq def_2$ e $def_2 \subseteq def_1$.
+
+\begin{itemize}
+    \item $def_{nonRicorsiva} \subseteq def_{ricorsiva}$: si usa il principio di induzione matematico in cui si fa induzione su un $k$.
+    \item $def_{ricorsiva} \subseteq def_{nonRicorsiva}$: si usa il principio di induzione strutturale in cui si fa induzione sul Passo ricorsivo della definizione ricorsiva dell'insieme.
+    \item $\forall w \in def_{ricorsiva} P(w)$: Si usa il principio di induzione strutturale anche quando si deve dimostrare che la $def_{ricorsiva}$ ha una proprietà.
+\end{itemize}
+
+\section{Principio induzione sulle stringhe}
+\textbf{Passo base}: a seconda di quale induzione si usa, provare che gli elementi dell'insieme nel Passo base della definizione ricorsiva dell'insieme sono sottoinsiemi della definizione non ricorsiva o hanno una certa proprietà nel caso del principio di induzione strutturale, il viceversa nel caso di induzione matematica.
+
+\textbf{Passo induttivo}: a seconda di quale induzione si usa, si suppone per \textbf{Ipotesi induttiva} che l'insieme è sottoinsieme della definizione non ricorsiva oppure ha una certa proprietà e si dimostra che costruendo gli altri elementi dell'insieme usando il Passo ricorsivo, i nuovi elementi sono sempre sottoinsiemi della definizione non ricorsiva o hanno una certa proprietà nel caso di induzione strutturale, il viceversa nel caso di induzione matematica.
+Usare una $w$ appartenente alla definizione ricorsiva che sia diversa dagli elementi nel Passo base.
+
+\section{Esempi}
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+\textbf{Passo base}: $a \in B, b \in B$
+
+\textbf{Passo ricorsivo}: Se $w \in B$, allora $wbb \in B$ e $wba \in B$
+
+Utilizzando il Principio di induzione, dimostrare che ogni elemento di $B$ ha lunghezza dispari.
+
+\centerline{\textbf{Svolgimento}}
+
+Bisogna dimostrare che $\forall w \in B, |w| = 2k+1, k \ge 0$
+
+Dimostrazione per il Principio di induzione strutturale, poiché si dimostra che una definizione ricorsiva ha una proprietà.
+
+\textbf{Passo base}: $|a| =\text{(definizione lunghezza stringa)}=1 = 2 \cdot 0 + 1$, $|b| =$(definizione lunghezza stringa)$=1 = 2 \cdot 0 + 1$
+
+\textbf{Passo induttivo}: \\
+\textbf{Ipotesi induttiva}: $|w| = 2k + 1$, $w \in B$. \\
+Sia $w \in B, w \neq a, w \neq b$. Allora $w = ubb$ oppure $w = uba$, $u \in B$.
+Per ipotesi induttiva esiste un $k \ge 0$ tale che $|w| = 2k + 1$. \\
+Per la definizione ricorsiva di lunghezza di stringa, risulta che:
+\begin{itemize}
+    \item $|w| = |ubb| = |ub| + 1 = |u| + 2 = 2k + 1 + 2 = 2(k + 1) + 1$
+    \item $|w| = |uba| = |ub| + 1 = |u| + 2 = 2k + 1 + 2 = 2(k + 1) + 1$
+\end{itemize}
+
+Il Passo induttivo è stato dimostrato e pertanto l'enunciato è vero.
+\end{example}
+
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+$A \subset \{a, b\}^*$
+
+\textbf{Passo base}: $b \in A$
+
+\textbf{Passo ricorsivo}: Se $w \in A$, allora $wab \in A$
+
+Dimostrare che $\forall n \in \mathbb{N}, b(ab)^n \in A$
+
+\centerline{\textbf{Svolgimento}}
+
+Dimostrazione per Principio di induzione matematico, in quanto si dimostra $def_{nonRicorsiva} \subseteq def_{ricorsiva}$.
+
+\textbf{Passo base}: $b(ab)^0 =$(definizione potenze stringhe)$= b \lambda =$(definizione concatenazione stringhe)$= b \in A$
+
+\textbf{Passo induttivo}: \\
+\textbf{Ipotesi induttiva}: $b(ab)^k = w \in A$. \\
+Sia $w \in A, w \neq b$. Allora $w = uab, u \in A$. \\
+$b(ab)^{k+1} = b(ab)^k \cdot ab = wab \in A$
+
+Il passo induttivo è stato dimostrato e pertanto l'enunciato è vero.
+
+\end{example}
+
+\section{Principio di induzione strutturale sugli alberi radicati}
+\textbf{Passo base}: Provare che $P(T)$ è vera se $T=(\{r\}, \emptyset)$
+
+\textbf{Passo induttivo}: Sia $T=(V, E)$ un albero costruito a partire dagli alberi radicati $T_1=(V_1, E_1), ..., T_n=(V_k, E_k)$. Per \textbf{Ipotesi induttiva} $P(T_1), ..., P(T_k)$ sono vere, provare usando l'ipotesi induttiva che $P(T)$ è vera quando si costruisce $T$.
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+
+Per ogni albero radicato $T=(V, E)$ risulta $|V| = |E| + 1$.
+
+\centerline{\textbf{Svolgimento}}
+
+\textbf{Passo base}: $T=(\{r\}, \emptyset)$, $|V| = 1 = |\emptyset| + 1 = 0 + 1 = 1$
+
+\textbf{Passo induttivo}: \\
+Sia $T=(V, E)$ costruito a partire dagli alberi $T_1=(V_1, E_1), ... , T_k=(V_k, E_k)$. \\
+\textbf{Ipotesi induttiva}: $|V_i| = |E_i| + 1, 1 \le i \le k$ \\
+$V =$(definizione albero radicale)$= r \cup V_1 \cup ... \cup V_k$ \\
+$E =$(definizione albero radicale)$= \{(r, r_1), ..., (r, r_k)\} \cup E_1 \cup ... \cup E_k$ \\
+$|V| = r + |V_1| + ... + |V_k| =$(ipotesi induttiva)$= 1 + |E_1| + 1 + ... + |E_k| + 1 = |E| + 1$
+
+Il passo ricorsivo è stato dimostrato e pertanto l'enunciato è vero.
+\end{example}
+
+\section{Principio induzione strutturale sugli alberi binari pieni e non}
+\textbf{Passo base}: Provare che $P(T)$ è vera se $T=(\{r\}, \emptyset)$. Nel caso di albero binario non pieno, si prova che $P(T)$ è vera se $T=(\emptyset, \emptyset)$. Il Passo induttivo è uguale.
+
+\textbf{Passo induttivo}: Sia $T=(V,E)$ un albero binario pieno o non costruito a partire dagli alberi binari pieno o non $T_1=(V_1, E_1)$ e $T_2=(V_2, E_2)$. Per \textbf{Ipotesi induttiva} $P(T_1)$ e $P(T_2)$ sono vere, provare usando l'ipotesi induttiva che $P(T)$ è vera quando si costruisce $T$.
+\begin{example}
+\phantom{}
+\centerline{\textbf{Traccia}}
+Sia $f(T)$ la funzione che prende in input un albero e restituisce il numero di foglie di esso. \\
+Sia $h(T)$ la funzione che prende in input un albero e restituisce la sua altezza.
+
+In un albero binario $T$ il numero di foglie è minore o uguale di $2^h$, dove $h$ è l'altezza di $T$, cioè $f(T) \le 2^{h(T)}$.
+
+\centerline{\textbf{Svolgimento}}
+
+\textbf{Passo base}: \\
+$T=(\emptyset, \emptyset)$ oppure $T=(\{r\}, \emptyset)$ \\
+$h(T) = 0$ \\
+$f(T) = 0 \le 2^0 = 1$ oppure $f(T) = 1 \le 2^0 = 1$
+
+\textbf{Passo induttivo}: \\
+Sia $T=(V, E)$ un albero binario pieno o non costruito a partire dagli alberi $T_1=(V_1, E_1)$ e $T_2=(V_2, E_2)$. \\
+\textbf{Ipotesi induttiva}: $f(T_i) \le 2^{h(T_i)}, 1 \le i \le 2$ \\
+Abbiamo due casi a seconda che la radice abbia uno o due figli:
+\begin{itemize}
+    \item Nel primo caso abbiamo che $h(T_1) = h(T) - 1$ e che $f(T)=f(T_1)$ e quindi si ha che $f(T) = f(T_1) \le 2^{h(T_1)} = 2^{h(T) - 1} < 2^{h(T)}$.
+    \item Nel secondo caso abbiamo che $h(T_i) = h(T) - 1, 1 \le i \le 2$ e che $f(T) = f(T_1) + f(T_2)$, quindi si ha che $f(T) = f(T_1) + f(T_2) \le 2^{h(T_1)} + 2^{h(T_2)} = 2^{h(T)-1} + 2^{h(T)-1} = 2 \cdot 2^{h(T) - 1} = 2^{h(T)}$
+\end{itemize}
+
+Il passo induttivo è stato dimostrato e pertanto l'enunciato è vero.
+
+\end{example}

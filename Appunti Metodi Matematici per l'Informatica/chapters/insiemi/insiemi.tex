@@ -1,0 +1,26 @@
+\begin{itemize}
+    \item $A=B \iff A \subseteq B \wedge B \subseteq A$
+    \item $A=B: \forall x(x \in A \iff x \in B) \equiv \forall x((x \in A \implies x \in B) \wedge (x \in B \implies x \in A))$
+    \item $A \subseteq B: \forall x(x \in A \implies x \in B)$
+    \item $A \not\subseteq B: \neg(\forall x(x \in A \implies x \in B) \equiv$ \\
+        $\exists x \neg(x \in A \implies x \in B) \equiv$ \\
+        $\exists x \neg(\neg (x \in A) \vee x \in B)) \equiv$ \\
+        $\exists x(x \in A \wedge x \not\in B)$
+    \item $\emptyset \in S: \forall x(x \in \emptyset \implies x \in S)$ è sempre \textbf{True} perché $x \in \emptyset$ è sempre falsa e dalla \autoref{tab:true_table_implies}, se $p$ è \textbf{F}, la proposizione è sempre \textbf{T}.
+    \item $S \subseteq S: \forall x(x \in S \implies x \in S)$ è sempre \textbf{True} perché $p \implies p$ è una tautologia.
+    \begin{table}[H]
+    \centering
+    \caption{\label{tab:true_table_p_implies_p}Tabella di verità di $p \implies p$.}
+        \begin{tabular}{|c || c ||} 
+         \hline
+         \textit{p} & $p \implies p$ \\
+         \hline\hline
+         T & T \\ 
+         \hline
+         F & T \\
+         \hline
+        \end{tabular}
+    \end{table}
+    \item $A \subset B: \forall x(x \in A \implies x \in B) \wedge \exists y(y \in B \wedge y \not\in A)$
+    \item $A \times B=\{(a, b)\mid a \in A \wedge b \in B\}$
+\end{itemize}
