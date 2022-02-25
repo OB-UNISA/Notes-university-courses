@@ -17,7 +17,7 @@ Il quantificatore $\forall$ viene usato per esprimere una proprietà su un grupp
 $P(x)$, \textit{x} è laureato in informatica \\
 $Q(x)$, \textit{x} ha fatto l'esame di MMI \\
 Dominio di \textit{x} sono tutti gli umani \\
-$\forall xP(x) \implies Q(x)$
+$\forall x(P(x) \implies Q(x))$
 \end{example}
 
 \textbf{N.B:} Se $\forall xP(x)$ è falso, ciò \underline{non} significata che tutti gli oggetti del dominio di \textit{x} non rispettino la proprietà \textit{P}, ma che esiste almeno un oggetto che non rispetta le proprietà.
@@ -29,7 +29,7 @@ Il quantificatore $\exists$ viene usato per esprime l'esistenza di un oggetto co
 $P(x)$, \textit{x} è laureato in informatica \\
 $Q(x)$, \textit{x} ha fatto l'esame di programmazione avanzata \\
 Dominio di \textit{x} sono tutti gli umani \\
-$\exists xP(x) \wedge Q(x)$
+$\exists x(P(x) \wedge Q(x))$
 \end{example}
 
 \subsection{Dominio vuoto}
@@ -57,13 +57,13 @@ $P(x)$, \textit{x} è un figlio \\
 $Q(x)$, \textit{x} è una madre \\
 $R(x, y)$, \textit{x} è figlio di \textit{y} \\
 Dominio di \textit{x} e \textit{y} sono tutti gli umani \\
-$\forall x \exists y \mid R(x, y) \wedge P(x) \wedge Q(y)$
+$\forall x \exists y (R(x, y) \wedge P(x) \wedge Q(y))$
 \end{example}
 \begin{example}
 \emph{Ognuno apprezza qualcuno} \\
 $P(x, y)$, \textit{x} apprezza y \\
 Dominio di \textit{x} e \textit{y} sono tutti gli umani \\
-$\forall x \exists y \mid P(x, y)$
+$\forall x \exists y P(x, y)$
 \end{example}
 
 \subsection{Negazione quantificatori}
